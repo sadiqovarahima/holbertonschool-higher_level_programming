@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-def(str):
+def uppercase(str):
     for char in str:
         ascii=ord(char)
         if ascii >= 97 and ascii <= 122:
