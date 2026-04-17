@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/pythoni3
 def roman_to_int(roman_string):
     if not isinstance(roman_string, str) or roman_string is None:
         return 0
@@ -10,7 +10,7 @@ def roman_to_int(roman_string):
     n=len(roman_string)
     for i in range(n):
         current = roman_dict.get(roman_string[i], 0)
-        if i + 1 < n and current < roman.dict.get(roman_string[i + 1], 0):
+        if i + 1 < n and current < roman_dict.get(roman_string[i + 1], 0):
             total -= current
         else:
             total += current
