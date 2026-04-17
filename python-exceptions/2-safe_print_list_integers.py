@@ -8,8 +8,10 @@ def safe_print_list_integers(my_list=[], x=0):
                 print("{:d}".format(element), end="")
                 count += 1
             except (ValueError, TypeError):
-                pass
+                continue
         except IndexError:
             break
+        except Exception as e:
+            print("\nGizli xeta tapildi: ",e)
     print("")
     return count
