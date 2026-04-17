@@ -18,4 +18,4 @@ def list_division(my_list_1, my_list_2, list_lenght):
             res = 0
         finally:
             new_list.append(res)
-    retun new_list
+    return new_list
