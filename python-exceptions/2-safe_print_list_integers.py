@@ -1,17 +1,13 @@
 #!/usr/bin/python3
 def safe_print_list_integers(my_list=[], x=0):
-    count = 0
-    for i in range(x):
-        try:
-            element = my_list[i]
-            try:
-                print("{:d}".format(element), end="")
-                count += 1
-            except (ValueError, TypeError):
+    try:
+        cnt = 0
+        for i in range(x):
+            if type(my_list[i]) is not int:
                 continue
-        except IndexError:
-            break
-        except Exception as e:
-            print("\nGizli xeta tapildi: ",e)
-    print("")
-    return count
+            print("{:d}".format(my_list[i]), end="")
+            cnt += 1
+        print()
+        return cnt
+    except Exception:
+        pass
