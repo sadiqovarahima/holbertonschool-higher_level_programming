@@ -1,4 +1,3 @@
-cat <<EOF > tests/7-base_geometry.txt
 The ``BaseGeometry`` class
 =========================
 
