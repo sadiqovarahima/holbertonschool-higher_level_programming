@@ -61,7 +61,7 @@ class Rectangle:
 
     def __del__(self):
         """obyekt siliende mesaj versin"""
-        Rectangle.number_of_imstance -= 1
+        Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
 
     @staticmethod
@@ -75,6 +75,7 @@ class Rectangle:
             return rect_1
         return rect_2
 
+    @classmethod
     def square(cls, size=0):
         """eni hunndurluyu size olan rectangle qaytarir"""
         return cls(size, size)
