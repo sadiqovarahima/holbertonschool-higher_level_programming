@@ -3,11 +3,8 @@
 
 
 class Rectangle:
-    """Düzbucaqlı klası.
-    
-    Attributes:
-        number_of_instances (int): Yaradılmış obyektlərin sayı.
-    """
+    """Düzbucaqlı ksi"""
+
 
     number_of_instances = 0
 
