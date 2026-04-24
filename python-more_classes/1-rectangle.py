@@ -22,7 +22,7 @@ class Rectangle:
             raise ValueError("width must be >= 0")
         self.__width = value
 
-        @property
+    @property
     def height(self):
         """hundurluyunu qaytarir"""
         return self.__height
