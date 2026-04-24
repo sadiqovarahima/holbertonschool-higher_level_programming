@@ -23,7 +23,7 @@ class Rectangle:
         self.__width = value
 
     @property
-   def height(self):
+    def height(self):
         """eni geyi qaytarirriq"""
         return self.__height
         
