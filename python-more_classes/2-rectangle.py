@@ -8,6 +8,7 @@ class Rectangle:
         """en ve hundurluk"""
         self.width = width
         self.height = height
+
     @property
     def width(self):
         """eni geyi qaytarirriq"""
@@ -27,7 +28,7 @@ class Rectangle:
         """eni geyi qaytarirriq"""
         return self.__height
         
-    @width.setter
+    @height.setter
     def height(self, value):
         """deyeri yoxluyuruq"""
         if not isinstance(value, int):
@@ -41,6 +42,6 @@ class Rectangle:
 
     def perimeter(self):
         """perimetr qaytaririq"""
-        if self.__width == 0 or self.__perimeter == 0:
+        if self.__width == 0 or self.__height == 0:
             return 0
         return 2 * (self.__width + self.__height)
