@@ -11,7 +11,7 @@ class Rectangle:
     @property
     def width(self):
         """eni geyi qaytarirriq"""
-        retun self.__width
+        return self.__width
 
     @width.setter
     def width(self, value):
