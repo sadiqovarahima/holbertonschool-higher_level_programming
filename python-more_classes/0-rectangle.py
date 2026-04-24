@@ -3,6 +3,7 @@
 senedle.me
 """
 
+
 class Rectangle:
     """
     Duzbucaqlini temsil eden class
