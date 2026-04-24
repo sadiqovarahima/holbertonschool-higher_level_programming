@@ -6,17 +6,17 @@ class Rectangle:
     """duzbucaqli klassi"""
     number_of_instances = 0
     print_symbol = "#"
-    
+
     def __init__(self, width=0, height=0):
         self.width = width
         self.height = height
         Rectangle.number_of_instances += 1
-    
+
     @property
     def width(self):
         """eni geri qaytaririq"""
         return self.__width
-    
+
     @width.setter
     def width(self, value):
         """value yoxlanmasi"""
@@ -55,6 +55,7 @@ class Rectangle:
             return ""
         symbol = str(self.print_symbol)
         return "\n".join([symbol * self.__width for _ in range(self.__height)])
+
     def __repr__(self):
         """obyektin kod temsili"""
         return "Rectangle({}, {})".format(self.__width, self.__height)
