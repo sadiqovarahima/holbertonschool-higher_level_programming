@@ -54,7 +54,7 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return ""
         symbol = str(self.print_symbol_
-        return "\n".join([symbol * self.__width for i in range(self.__height)])
+        return "\n".join([symbol * self.__width for _ i in range(self.__height)])
     def __repr__(self):
         """obyektin kod temsili"""
         return "Rectangle({}, {})".format(self.__width, self.__height)
