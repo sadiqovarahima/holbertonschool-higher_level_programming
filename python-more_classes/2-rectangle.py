@@ -28,7 +28,7 @@ class Rectangle:
         """eni geyi qaytarirriq"""
         return self.__height
 
-    `@height.setter
+    @height.setter
     def height(self, value):
         """deyeri yoxluyuruq"""
         if not isinstance(value, int):
