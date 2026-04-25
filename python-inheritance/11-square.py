@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """Rectangleden miras alan square klassi"""
-Rectangle = __import__("9-rectangle.py").Rectangle
+Rectangle = __import__("9-rectangle").Rectangle
 
 
 class Square(Rectangle):
