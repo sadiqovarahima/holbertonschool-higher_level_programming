@@ -4,7 +4,7 @@
 
 class BaseGeometry:
     """hendesi fiqurlarin sehesi"""
-    
+
     def area(self):
         """saheni hesablayan metod"""
         raise Exception("area() is not implemented")
