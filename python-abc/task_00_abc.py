@@ -6,7 +6,7 @@ from abc import ABC, abstractmethod
 class Animal(ABC):
     """Abstarct animal kalssi"""
 
-    @absractmethod
+    @abstractmethod
     def sound(self):
         """Heyvanin cixardigi ses"""
         pass
