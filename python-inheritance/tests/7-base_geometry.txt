@@ -1,6 +1,9 @@
 The ``BaseGeometry`` class
 =========================
 
+This module provides a base class for geometry-related objects.
+It includes methods for area calculation and integer validation.
+
 Importing the class:
     >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
     >>> bg = BaseGeometry()
@@ -23,12 +26,14 @@ Testing integer_validator() with non-integer (TypeError):
     ...     print("[{}] {}".format(e.__class__.__name__, e))
     [TypeError] name must be an integer
 
+Testing integer_validator() with a float:
     >>> try:
     ...     bg.integer_validator("age", 12.5)
     ... except Exception as e:
     ...     print("[{}] {}".format(e.__class__.__name__, e))
     [TypeError] age must be an integer
 
+Testing integer_validator() with a boolean:
     >>> try:
     ...     bg.integer_validator("is_active", True)
     ... except Exception as e:
