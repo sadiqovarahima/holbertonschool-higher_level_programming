@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 """Bu modul faylın sonuna mətn əlavə edən funksiyanı ehtiva edir."""
 
 
