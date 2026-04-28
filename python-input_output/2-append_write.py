@@ -1,0 +1,10 @@
+#!/usr/bin/python
+"""Bu modul faylın sonuna mətn əlavə edən funksiyanı ehtiva edir."""
+
+
+def append_write(filename="", text=""):
+    """
+    Mətni UTF8 faylın sonuna əlavə edir və əlavə olunan simvolların sayını qaytarır.
+    """
+    with open(filename, mode="a", encoding="utf-8") as f:
+        return f.write(text)
