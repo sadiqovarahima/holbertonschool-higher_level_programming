@@ -4,7 +4,7 @@
 
 def append_write(filename="", text=""):
     """
-    Mətni UTF8 faylın sonuna əlavə edir və əlavə olunan simvolların sayını qaytarır.
+    Mətni UTF8 faylın sonuna əlavə .
     """
     with open(filename, mode="a", encoding="utf-8") as f:
         return f.write(text)
