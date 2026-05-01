@@ -14,19 +14,18 @@ class Student:
     def to_json(self, attrs=None):
         """
         Obyektin lüğət təsvirini qaytarır.
-        Əgər attrs siyahısı verilirsə, yalnız oradakı atributları qaytarır.
         """
         # Bütün atributları lüğət kimi götürürük
         my_dict = self.__dict__
 
         # Əgər attrs siyahıdırsa və içindəkilər stringdirsə filtr tətbiq edirik
         if isinstance(attrs, list) and all(isinstance(s, str) for s in attrs):
-            # Yalnız attrs siyahısında olan açarları saxlayan yeni lüğət yaradırıq
+            # Yalnız attrs siyahısında olan
             filtered_dict = {}
             for key in attrs:
                 if key in my_dict:
                     filtered_dict[key] = my_dict[key]
             return filtered_dict
 
-        # Əgər attrs yoxdursa və ya formatı düz deyilsə, bütün lüğəti qaytarırıq
+        # Əgər attrs yoxdursa
         return my_dict
