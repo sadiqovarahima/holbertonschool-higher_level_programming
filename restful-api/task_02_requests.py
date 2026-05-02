@@ -9,7 +9,7 @@ def fetch_and_print_posts():
     """butun basliqlari ekrana cixarir"""
     resp = requests.get("https://jsonplaceholder.typicode.com/posts")
     sc = rsp.status_code
-     r_json = resp.json()
+    r_json = resp.json()
     
     print(f"Status Code: {sc}")
 
