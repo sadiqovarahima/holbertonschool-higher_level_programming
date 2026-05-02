@@ -16,17 +16,14 @@ def fetch_and_print_posts():
 
 def fetch_and_save_posts():
     """Function to fetch and save posts."""
-
     resp = requests.get("https://jsonplaceholder.typicode.com/posts")
     sc = resp.status_code
     header = ["id", "title", "body"]
     r_json = resp.json()
-
     if (sc == 200):
         with open("posts.csv", "w") as csvfile:
             writer = csv.DictWriter(csvfile, fieldnames=header)
             writer.writeheader()
-            
             for post in r_json:
                 row = {}
                 for field in header:
