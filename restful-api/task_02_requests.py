@@ -10,9 +10,7 @@ def fetch_and_print_posts():
     resp = requests.get("https://jsonplaceholder.typicode.com/posts")
     sc = rsp.status_code
     r_json = resp.json()
-    
     print(f"Status Code: {sc}")
-
     for i in r_json:
         print(i["title"])
 
@@ -20,7 +18,6 @@ def fetch_and_save_posts():
     """Function to fetch and save posts."""
 
     resp = requests.get("https://jsonplaceholder.typicode.com/posts")
-
     sc = resp.status_code
     header = ["id", "title", "body"]
     r_json = resp.json()
