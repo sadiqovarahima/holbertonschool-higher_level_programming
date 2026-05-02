@@ -3,7 +3,7 @@
 import json
 
 
-def serialization_and_save_to_file(data, filename):
+def serialize_and_save_to_file(data, filename):
     """json formatina cevirir ve fayla yzir"""
     with open(filename, "w") as f:
         f.write(json.dumps(data))
