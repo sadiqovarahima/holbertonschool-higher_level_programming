@@ -1,25 +1,26 @@
 #!/usr/bin/python3
-"""
-return all table values (table 'states')
-parameters given to script: username, password, database
-"""
-
+"""This module connects to a MySQL database and lists all states."""
 import MySQLdb
-from sys import argv
+import sys
+
 
 if __name__ == "__main__":
+    username = sys.argv[1]
+    password = sys.argv[2]
+    database = sys.argv[3]
 
-    # connect to database
-    db = MySQLdb.connect(host="localhost",
-                         port=3306,
-                         user=argv[1],
-                         passwd=argv[2],
-                         db=argv[3])
+    db = MySQLdb.connect(
+        host="localhost",
+        port=3306,
+        user=username,
+        passwd=password,
+        db=database
+    )
 
-    # create cursor to exec queries using SQL
     cursor = db.cursor()
     cursor.execute("SELECT * FROM states ORDER BY id ASC")
-    for row in cursor.fetchall():
+    rows = cursor.fetchall()
+    for row in rows:
         print(row)
     cursor.close()
     db.close()
