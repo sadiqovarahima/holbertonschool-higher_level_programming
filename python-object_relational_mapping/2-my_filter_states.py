@@ -8,7 +8,6 @@ import sys
 
 
 if __name__ == "__main__":
-    # Verilənlər bazasına qoşulma (Port mütləq 3306 olmalıdır)
     db = MySQLdb.connect(
         host="localhost",
         port=3306,
@@ -16,20 +15,18 @@ if __name__ == "__main__":
         passwd=sys.argv[2],
         db=sys.argv[3]
     )
-    
+
     cursor = db.cursor()
-    
-    # Şərtdə tələb olunan .format() metodundan istifadə edərək sorğunu qururuq
-    # SQL injection-dan qorunmaq və mətni düzgün oxumaq üçün '{}' dırnaq daxilində yazılmalıdır
-    query = "SELECT * FROM states WHERE name = '{}' ORDER BY states.id ASC".format(sys.argv[4])
-    
+
+    # E501 xətasının qarşısını almaq üçün sorğunu iki sətirə bölürük
+    query = "SELECT * FROM states WHERE name = '{}' "\
+            "ORDER BY states.id ASC".format(sys.argv[4])
+
     cursor.execute(query)
-    
-    # Nəticələri ekrana çıxarırıq
+
     rows = cursor.fetchall()
     for row in rows:
         print(row)
-        
-    # Bağlantıları bağlayırıq
+
     cursor.close()
     db.close()
