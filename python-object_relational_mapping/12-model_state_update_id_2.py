@@ -1,29 +1,20 @@
 #!/usr/bin/python3
-"""Changes the name of a State object with id = 2."""
-
+"""Script that changes the name of a State object with id = 2"""
 import sys
 from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import Session
 from model_state import Base, State
 
+
 if __name__ == "__main__":
-    username = sys.argv[1]
-    password = sys.argv[2]
-    database = sys.argv[3]
-
     engine = create_engine(
-        "mysql+mysqldb://{}:{}@localhost:3306/{}".format(
-            username, password, database
-        )
+        'mysql+mysqldb://{}:{}@localhost/{}'.format(
+            sys.argv[1], sys.argv[2], sys.argv[3]
+        ),
+        pool_pre_ping=True
     )
-
-    Session = sessionmaker(bind=engine)
-    session = Session()
-
+    session = Session(engine)
     state = session.query(State).filter(State.id == 2).first()
-
-    if state:
-        state.name = "New Mexico"
-        session.commit()
-
+    state.name = "New Mexico"
+    session.commit()
     session.close()
