@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
-Script that takes in arguments and displays all values in the states
-table of hbtn_0e_0_usa where name matches the argument, safe from MySQL injection
+Script that lists all states with a given name
+safe from MySQL injections
 """
 import MySQLdb
 import sys
@@ -18,9 +18,9 @@ if __name__ == "__main__":
 
     cursor = db.cursor()
 
-    # %s istifadə edərək SQL injection-ın qarşısını tam alırıq
-    # execute funksiyasının ikinci arqumenti mütləq tuple (sys.argv[4],) olmalıdır
-    query = "SELECT * FROM states WHERE BINARY name = %s ORDER BY states.id ASC"
+    # Sətir uzunluğu limitini (79) keçməmək üçün sorğunu iki yerə bölürük
+    query = "SELECT * FROM states WHERE BINARY name = %s "\
+            "ORDER BY states.id ASC"
     cursor.execute(query, (sys.argv[4],))
 
     rows = cursor.fetchall()
