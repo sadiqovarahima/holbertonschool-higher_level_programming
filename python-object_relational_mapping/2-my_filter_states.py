@@ -17,9 +17,7 @@ if __name__ == "__main__":
     )
 
     cursor = db.cursor()
-
-    # E501 xətasının qarşısını almaq üçün sorğunu iki sətirə bölürük
-    query = "SELECT * FROM states WHERE name = '{}' "\
+    query = "SELECT * FROM states WHERE BINARY name = '{}' "\
             "ORDER BY states.id ASC".format(sys.argv[4])
 
     cursor.execute(query)
